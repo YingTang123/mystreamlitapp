@@ -13,7 +13,7 @@ st.set_page_config(
 )
 
 if os.path.exists(path+"/model01.h5") and os.path.exists(path+"/model01.h5"):
-    st.info("Model is existed!")
+    pass
 else:
     from filesplit.merge import Merge
 
