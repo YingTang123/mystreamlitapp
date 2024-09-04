@@ -1,4 +1,4 @@
-import tensorflow as tf  
+(import tensorflow as tf  
 from tensorflow.keras.models import load_model
 import streamlit as st
 import numpy as np
@@ -120,7 +120,7 @@ with st.form("Model input parameters"):
 
 if submitted:
     if m=="**model1**":
-        model = load_model(path+'/model01.h5')
+        model = load_model(open(path+'/model01.h5'))
         res = model.predict(np.array([list(d1.values())[:-5]]))
 
         if res<0.456:
@@ -135,7 +135,7 @@ if submitted:
             """)
 
     if m=="**model2**":
-        model = load_model(path+'/model02.h5')
+        model = load_model(open(path+'/model02.h5'))
         res = model.predict(np.array([list(d1.values())]))
 
         if res<0.456:
