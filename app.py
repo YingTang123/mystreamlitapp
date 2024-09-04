@@ -121,7 +121,7 @@ with st.form("Model input parameters"):
 
 if submitted:
     if m=="**model1**":
-    
+        st.info(path+'/model01.h5')
         model = load_model(path+'/model01.h5')
         res = model.predict(np.array([list(d1.values())[:-5]]))
 
