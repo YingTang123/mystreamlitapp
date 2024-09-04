@@ -13,12 +13,15 @@ st.set_page_config(
 )
 
 
-from filesplit.merge import Merge
+if os.path.exists(path+"/model01.h5"):
+    pass
+else:
+    from filesplit.merge import Merge
 
-merge = Merge(inputdir = path+"/model1", outputdir=path, outputfilename = "model01.h5")
-merge.merge()
-merge = Merge(inputdir = path+"/model2", outputdir=path, outputfilename = "model02.h5")
-merge.merge()
+    merge = Merge(inputdir = path+"/model1", outputdir=path, outputfilename = "model01.h5")
+    merge.merge()
+    merge = Merge(inputdir = path+"/model2", outputdir=path, outputfilename = "model02.h5")
+    merge.merge()
 
 with st.sidebar:
     st.markdown('''
@@ -119,7 +122,7 @@ with st.form("Model input parameters"):
 if submitted:
     if m=="**model1**":
     
-        model = load_model('model01.h5', compile=True)
+        model = load_model(path+'/model01.h5', compile=True)
         res = model.predict(np.array([list(d1.values())[:-5]]))
 
         if res<0.456:
@@ -134,7 +137,7 @@ if submitted:
             """)
 
     if m=="**model2**":
-        model = load_model('model02.h5', compile=True)
+        model = load_model(path+'/model02.h5', compile=True)
         res = model.predict(np.array([list(d1.values())]))
 
         if res<0.456:
