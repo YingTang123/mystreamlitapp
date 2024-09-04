@@ -1,4 +1,4 @@
-(import tensorflow as tf  
+import tensorflow as tf  
 from tensorflow.keras.models import load_model
 import streamlit as st
 import numpy as np
