@@ -11,9 +11,9 @@ st.set_page_config(
 
 from filesplit.merge import Merge
 
-merge = Merge(inputdir = "model1", outputdir="", outputfilename = "model1.h5")
+merge = Merge(inputdir = "/model1", outputdir="/", outputfilename = "model1.h5")
 merge.merge()
-merge = Merge(inputdir = "model2", outputdir="", outputfilename = "model2.h5")
+merge = Merge(inputdir = "/model2", outputdir="/", outputfilename = "model2.h5")
 merge.merge()
 
 with st.sidebar:
