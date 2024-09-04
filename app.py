@@ -12,7 +12,6 @@ st.set_page_config(
     layout="wide"
 )
 
-
 if os.path.exists(path+"/model01.h5") and os.path.exists(path+"/model01.h5"):
     pass
 else:
