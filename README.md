@@ -1,1 +1,2 @@
 # mystreamlitapp
+This predictive models can be used to predict the risk of PC-AKI after coronary angiography and intervention in adult patients with CKD (eGFR ＜ 60 ml/min/1.73m²),aiding in risk stratification and guiding management recommendations. Model 1 includes preoperative variables for preoperative assessment, whereas Model 2 includes additional intraoperative variables for postoperative assessment.
