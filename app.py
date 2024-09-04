@@ -122,7 +122,7 @@ with st.form("Model input parameters"):
 if submitted:
     if m=="**model1**":
     
-        model = load_model(path+'/model01.h5', compile=True)
+        model = load_model(path+'/model01.h5')
         res = model.predict(np.array([list(d1.values())[:-5]]))
 
         if res<0.456:
@@ -137,7 +137,7 @@ if submitted:
             """)
 
     if m=="**model2**":
-        model = load_model(path+'/model02.h5', compile=True)
+        model = load_model(path+'/model02.h5')
         res = model.predict(np.array([list(d1.values())]))
 
         if res<0.456:
