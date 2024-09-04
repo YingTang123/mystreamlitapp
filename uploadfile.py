@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 
-st.write(os.get_cwd())
+st.write(os.getcwd())
 
 uploaded_files = st.file_uploader(
     "Choose a h5 file to upload", accept_multiple_files=True, type=['h5', 'txt']
