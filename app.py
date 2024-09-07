@@ -123,7 +123,7 @@ if submitted:
         model = load_model(path+'/model01.h5')
         res = model.predict(np.array([list(d1.values())[:-5]]))
 
-        if res<0.456:
+        if res<0.459:
             st.info("""
                 **This patient is considered to be at low risk for PC-AKI.**    
                 **Recommendations: Administer preoperative hydration as needed, monitor renal function, and use low- or iso-osmolar contrast media.**
