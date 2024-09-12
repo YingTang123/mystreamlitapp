@@ -2,9 +2,13 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 import streamlit as st
 import numpy as np
-import os
+import os, pickle
 
 path = os.getcwd().replace("\\", "/")
+
+# 加载 StandardScaler 模型  
+with open('StandardScaler.pkl', 'rb') as file:  
+    loaded_scaler = pickle.load(file) 
 
 st.set_page_config(
     page_title="Python deep model",
@@ -121,7 +125,7 @@ with st.form("Model input parameters"):
 if submitted:
     if m=="**model1**":
         model = load_model(path+'/model01.h5')
-        res = model.predict(np.array([list(d1.values())[:-5]]))
+        res = model.predict(loaded_scaler.transform(np.array([list(d1.values())])))
 
         if res<0.459:
             st.info("""
