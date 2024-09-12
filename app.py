@@ -125,7 +125,7 @@ with st.form("Model input parameters"):
 if submitted:
     if m=="**model1**":
         model = load_model(path+'/model01.h5')
-        res = model.predict(loaded_scaler.transform(np.array([list(d1.values()[:-5])])))
+        res = model.predict(loaded_scaler.transform(np.array([list(d1.values()[:-5])])).tolist()[0])
 
         if res<0.459:
             st.info("""
