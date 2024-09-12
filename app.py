@@ -136,7 +136,7 @@ m02 = ['Urine protein', 'Diuretic', 'MI', 'Diabetes', 'CHF', 'TNT', 'β-blocker'
 if submitted:
     if m=="**model1**":
         model = load_model(path+'/model01.h5')
-        res = model.predict(loaded_scaler1.transform(pd.DataFrame([list(d1.values())[:-5]], columns=m01)))[0]
+        res = model.predict_proba(loaded_scaler1.transform(pd.DataFrame([list(d1.values())[:-5]], columns=m01)))[0]
 
         if res<0.459:
             st.info("""
@@ -151,7 +151,7 @@ if submitted:
 
     if m=="**model2**":
         model = load_model(path+'/model02.h5')
-        res = model.predict(loaded_scaler2.transform(pd.DataFrame([list(d1.values())], columns=m02)))[0]
+        res = model.predict_proba(loaded_scaler2.transform(pd.DataFrame([list(d1.values())], columns=m02)))[0]
 
         if res<0.456:
             st.info("""
