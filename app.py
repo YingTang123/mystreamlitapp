@@ -128,18 +128,16 @@ with st.form("Model input parameters"):
     submitted = st.form_submit_button("Start predict", use_container_width=True)
 
 m01 = ['Urine protein', 'Diuretic', 'MI', 'Diabetes', 'CHF', 'TNT', 'β-blocker',
+                         'NTpro-BNP', 'Hemoglobin', 'CK', 'Arrhythmia', 'LVEF', 'CK-MB', 'Albumin', 'Ca2+']
+m02 = ['Urine protein', 'Diuretic', 'MI', 'Diabetes', 'CHF', 'TNT', 'β-blocker',
                          'NTpro-BNP', 'Hemoglobin', 'CK', 'Arrhythmia', 'LVEF', 'CK-MB', 'Albumin', 'Ca2+',
                          'Vasoactive agent', 'IABP', 'Contrast volumes', 'PCI', 'Emergency procedure']
-m02 = ['Urine protein', 'Diuretic', 'MI', 'Diabetes', 'CHF', 'TNT', 'β-blocker',
-                         'NTpro-BNP', 'Hemoglobin', 'CK', 'Arrhythmia', 'LVEF', 'CK-MB', 'Albumin', 'Ca2+']
                          
 if submitted:
     if m=="**model1**":
         model = load_model(path+'/model01.h5')
-        st.write(len(list(d1.values())[:-5]))
-        dd = pd.DataFrame([list(d1.values())[:-5]], columns=m01)
         st.dataframe(dd, use_container_width=True)
-        res = model.predict(loaded_scaler1.transform(dd))[0]
+        res = model.predict(loaded_scaler1.transform(pd.DataFrame([list(d1.values())[:-5]], columns=m01)))[0]
 
         if res<0.459:
             st.info("""
