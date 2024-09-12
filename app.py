@@ -3,6 +3,7 @@ from tensorflow.keras.models import load_model
 import streamlit as st
 import numpy as np
 import os, pickle
+import pandas as pd
 
 path = os.getcwd().replace("\\", "/")
 
