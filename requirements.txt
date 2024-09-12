@@ -1,5 +1,4 @@
 numpy
-pickle
 streamlit
 tensorflow==2.15.0
 filesplit
