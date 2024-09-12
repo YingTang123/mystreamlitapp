@@ -125,9 +125,9 @@ with st.form("Model input parameters"):
 
 m01 = ['Urine protein', 'Diuretic', 'MI', 'Diabetes', 'CHF', 'TNT', 'β-blocker',
                          'NTpro-BNP', 'Hemoglobin', 'CK', 'Arrhythmia', 'LVEF', 'CK-MB', 'Albumin', 'Ca2+',
-                         'Vasoactive agent', 'IABP', 'Contrast volumes', 'PCI', 'Emergency procedure', 'AKI']
+                         'Vasoactive agent', 'IABP', 'Contrast volumes', 'PCI', 'Emergency procedure']
 m02 = ['Urine protein', 'Diuretic', 'MI', 'Diabetes', 'CHF', 'TNT', 'β-blocker',
-                         'NTpro-BNP', 'Hemoglobin', 'CK', 'Arrhythmia', 'LVEF', 'CK-MB', 'Albumin', 'Ca2+', 'AKI']
+                         'NTpro-BNP', 'Hemoglobin', 'CK', 'Arrhythmia', 'LVEF', 'CK-MB', 'Albumin', 'Ca2+']
                          
 if submitted:
     if m=="**model1**":
