@@ -7,11 +7,9 @@ import pandas as pd
 
 path = os.getcwd().replace("\\", "/")
 
-# 加载 StandardScaler 模型  
 with open('StandardScalerForModel1.pkl', 'rb') as file:  
     loaded_scaler1 = pickle.load(file) 
     
-# 加载 StandardScaler 模型  
 with open('StandardScalerForModel2.pkl', 'rb') as file:  
     loaded_scaler2 = pickle.load(file) 
 
